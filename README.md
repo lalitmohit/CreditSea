@@ -1,4 +1,4 @@
-Here's a structured README file for your Loan Management System project for **CreditSea**:
+
 
 ---
 
