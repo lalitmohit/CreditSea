@@ -23,7 +23,7 @@ const VerifierDashboard: React.FC = () => {
   useEffect(() => {
     const fetchLoans = async () => {
       try {
-        const response = await fetch(`http://localhost:8000/loans/summary`);
+        const response = await fetch(`https://credit-sea-flax.vercel.app/loans/summary`);
         // console.log(response)
         if (!response.ok) {
           throw new Error('Failed to fetch loans');

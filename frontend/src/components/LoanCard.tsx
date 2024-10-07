@@ -74,14 +74,14 @@ const LoanCard: React.FC<LoanCardProps> = ({ loan, actions, role }) => {
     try {
       if (role === "verifier") {
         // Verifier API call
-        await axios.patch(`http://localhost:8000/loans/status-verifier?_id=${loan.id}`, {
+        await axios.patch(`https://credit-sea-flax.vercel.app/loans/status-verifier?_id=${loan.id}`, {
           status: updatedStatus,
           loanOfficer: "Jon Okoh", // Passing loan officer as required
         });
         console.log(`Verifier updated loan ID: ${loan.id} status to ${updatedStatus}`);
       } else if (role === "admin") {
         // Admin API call
-        await axios.patch(`http://localhost:8000/loans/status-admin?_id=${loan.id}`, {
+        await axios.patch(`https://credit-sea-flax.vercel.app/loans/status-admin?_id=${loan.id}`, {
           status: updatedStatus,
           
         });
