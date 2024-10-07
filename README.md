@@ -63,7 +63,7 @@ The Loan Management System aims to streamline the loan approval process. Users c
    - Loans not marked "APPROVED" are shown to verifiers for verification.
    
 3. **Admin Controls:**
-   - Admins can view both PENDING and VERIFIED loans.
+   - Admins can view both VERIFIED, APPROVED AND REJECTED loans.
    - Approve or reject the loans.
    - Reset loan statuses when necessary.
 
@@ -101,6 +101,11 @@ The Loan Management System aims to streamline the loan approval process. Users c
   - Method: `GET`
   - URL: `/loans/total-disbursed-loanAmount`
   - Description: Get the total sum of loans where the status is "APPROVED".
+ 
+- **Get Summary**
+  - Method: `GET`
+  - URL: `/loans/summary`
+  - Description: Get the summary of loans, activeUsers, totaldisbursedamount and all".
 
 ---
 
@@ -114,20 +119,26 @@ The Loan Management System aims to streamline the loan approval process. Users c
 
 2. **Install dependencies:**
    ```bash
+   cd frontend
+   npm install
+   cd ..
+   cd backend
    npm install
    ```
 
 3. **Set up environment variables:**
-   - Create a `.env` file and set up the MongoDB URI, API keys, and other environment variables required by the system.
+   - Create a `.env` file and set up the MongoDB URI.
 
 4. **Start the backend server:**
    ```bash
-   npm run start
+   npm run dev
    ```
 
 5. **Start the frontend server:**
    - Navigate to the frontend directory and run the React app:
      ```bash
+     cd ..
+     cd frontend
      npm start
      ```
 
@@ -137,7 +148,7 @@ The Loan Management System aims to streamline the loan approval process. Users c
 
 - Users can access the loan application form, submit a loan request, and view the status of their application.
 - Verifiers can review loans where the status is not "APPROVED".
-- Admins can approve or reject loans and also view loans that are pending or approved.
+- Admins can approve or reject loans and also view loans that are verified, rejected or approved.
 
 ---
 
