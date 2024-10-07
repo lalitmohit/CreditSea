@@ -170,6 +170,5 @@ const errorHandler = (res, statusCode, message, details = null) => {
 ## Acknowledgements
 
 - Thanks to [CreditSea](https://creditsea.com) for providing the opportunity to work on this project.
-- Special thanks to ChatGPT for assistance in code generation and debugging.
 
 ---
