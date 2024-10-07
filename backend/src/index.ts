@@ -14,7 +14,7 @@ connectDB();
 // CORS configuration
 const corsOptions = {
   // origin: 'http://localhost:3000', // Allow frontend on port 3000
-  origin: 'https://credit-sea-b2qi.vercel.app/',
+  origin: '*',
   methods: ['GET', 'POST', 'PATCH', 'DELETE'], // Allowed methods
   credentials: true, // Allow cookies to be sent with requests
 };
