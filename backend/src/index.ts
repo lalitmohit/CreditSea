@@ -13,7 +13,8 @@ connectDB();
 
 // CORS configuration
 const corsOptions = {
-  origin: 'http://localhost:3000', // Allow frontend on port 3000
+  // origin: 'http://localhost:3000', // Allow frontend on port 3000
+  origin: 'https://credit-sea-flax.vercel.app',
   methods: ['GET', 'POST', 'PATCH', 'DELETE'], // Allowed methods
   credentials: true, // Allow cookies to be sent with requests
 };
