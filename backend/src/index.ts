@@ -1,3 +1,4 @@
+
 import express, { Request, Response, NextFunction } from 'express';
 import { connectDB } from './database'; // Assuming the DB connection is in database.ts
 import { Loan } from './models/Loan'; // Import the Loan model
@@ -10,25 +11,17 @@ const PORT = 8000;
 connectDB();
 
 // Middleware to parse JSON requests
+app.use(express.json());
 
-// // CORS configuration
-// const corsOptions = {
-//   // origin: 'http://localhost:3000', // Allow frontend on port 3000
-//   origin: 'https://credit-sea-flax.vercel.app',
-//   methods: ['GET', 'POST', 'PATCH', 'DELETE'], // Allowed methods
-//   credentials: true, // Allow cookies to be sent with requests
-// };
+// CORS configuration
+const allowedOrigins = [
+  'http://localhost:3000', // Allow local development
+  'https://credit-sea-b2qi.vercel.app', // Allow your deployed frontend
+];
+
+// CORS options
 const corsOptions = {
-  origin: function (origin: string | undefined, callback: (err: Error | null, allow?: boolean) => void) {
-    // Allow requests from these two specific origins
-    const allowedOrigins = ['https://credit-sea-flax.vercel.app', 'https://credit-sea-b2qi.vercel.app'];
-
-    if ((typeof origin === 'string' && allowedOrigins.includes(origin)) || !origin) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
+  origin: allowedOrigins,
   methods: ['GET', 'POST', 'PATCH', 'DELETE'], // Allowed methods
   credentials: true, // Allow cookies to be sent with requests
 };
@@ -36,7 +29,9 @@ const corsOptions = {
 // Use CORS middleware
 app.use(cors(corsOptions));
 
-app.use(express.json());
+// Define your routes here
+// Example: app.get('/loans/:id', ...);
+
 
 // Reusable error handler
 const errorHandler = (res: Response, statusCode: number, message: string, details?: string) => {
