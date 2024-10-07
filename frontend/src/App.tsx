@@ -43,7 +43,7 @@ const App: React.FC = () => {
     e.preventDefault();
 
     // Make an API call on form submission
-    const idNumber = 12140960; // Make sure idNumber is present in formData
+    const idNumber = 12140970; // Make sure idNumber is present in formData
     const apiUrl = `https://credit-sea-flax.vercel.app/loans?idNumber=${idNumber}`;
     try {
       const response = await fetch(apiUrl, {
