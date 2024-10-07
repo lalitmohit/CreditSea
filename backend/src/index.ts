@@ -11,10 +11,24 @@ connectDB();
 
 // Middleware to parse JSON requests
 
-// CORS configuration
+// // CORS configuration
+// const corsOptions = {
+//   // origin: 'http://localhost:3000', // Allow frontend on port 3000
+//   origin: 'https://credit-sea-flax.vercel.app',
+//   methods: ['GET', 'POST', 'PATCH', 'DELETE'], // Allowed methods
+//   credentials: true, // Allow cookies to be sent with requests
+// };
 const corsOptions = {
-  // origin: 'http://localhost:3000', // Allow frontend on port 3000
-  origin: 'https://credit-sea-b2qi.vercel.app',
+  origin: function (origin: string | undefined, callback: (err: Error | null, allow?: boolean) => void) {
+    // Allow requests from these two specific origins
+    const allowedOrigins = ['https://credit-sea-flax.vercel.app', 'https://credit-sea-b2qi.vercel.app'];
+
+    if ((typeof origin === 'string' && allowedOrigins.includes(origin)) || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   methods: ['GET', 'POST', 'PATCH', 'DELETE'], // Allowed methods
   credentials: true, // Allow cookies to be sent with requests
 };
