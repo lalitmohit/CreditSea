@@ -177,6 +177,17 @@ const errorHandler = (res, statusCode, message, details = null) => {
 
 ---
 
+## Note
+   - If API is not giving reponse to frontend plz try to reload as it's Vercel Issue ( Where we deployed it ).
+   - Active Users => Total Number of Users who have applied for the loan.
+   - Borrowers => Total Number of Users who got atleast one loan.
+   - Loans => Total number of loans applied by all users.
+   - TotalCaseDisbursed => Total amount of approved loans.
+     
+   
+
+
+
 ## Acknowledgements
 
 - Thanks to [CreditSea](https://creditsea.com) for providing the opportunity to work on this project.
