@@ -114,7 +114,6 @@ The Loan Management System aims to streamline the loan approval process. Users c
 1. **Clone the repository:**
    ```bash
    git clone <repo-url>
-   cd Loan-Management-System
    ```
 
 2. **Install dependencies:**
